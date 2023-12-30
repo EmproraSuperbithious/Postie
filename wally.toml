@@ -1,9 +1,10 @@
 [package]
-name = "superbithious/postie"
+name = "emprorasuperbithious/postie"
 description = "Postie is a safe alternative to RemoteFunction with a timeout."
 version = "1.1.0"
 license = "MIT"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
+exclude = ["docs"]
 
 [dependencies]
