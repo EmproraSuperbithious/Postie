@@ -115,7 +115,8 @@ function Postie.invokeServer(id: string, timeOut: number, ...: any): (boolean, .
 	local isResumed = false
 	local uuid = HttpService:GenerateGUID(false)
 
-	local function listener(player: Player?, didInvokeCallback: boolean, ...: any): ()
+	-- Player will always be `nil` on the client listeners.
+	local function listener(_: Player?, didInvokeCallback: boolean, ...: any): ()
 		isResumed = true
 		listenerByUuid[uuid] = nil
 		if didInvokeCallback then

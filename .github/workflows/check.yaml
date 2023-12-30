@@ -1,4 +1,4 @@
-name: CI
+name: Linting and Styling
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
 jobs:
 
   lint:
-    name: Lint
+    name: Linting
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code

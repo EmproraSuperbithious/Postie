@@ -1,4 +1,4 @@
-name: publish-docs
+name: Publish Docs
 on:
   push:
     branches:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    name: Build and deploy docs
+    name: Build and Deploy Docs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
