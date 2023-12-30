@@ -1,0 +1,8 @@
+gitRepoUrl = "https://github.com/EmproraSuperbithious/Postie"
+gitSourceBranch = "main"
+
+changelog = true
+
+[home]
+enabled = true
+includeReadme = false
