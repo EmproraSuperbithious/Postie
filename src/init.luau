@@ -1,10 +1,8 @@
 --!strict
 
 --[[
-	Postie 1.1.0 by BenSBk
-
-	Postie must be required from the server-side for RemoteEvents to be
-	initialized.
+	Postie must be required atleast once from the server-side for RemoteEvents
+	to be properly initialized.
 ]]
 
 --<< Services >>--
@@ -15,7 +13,6 @@ local RunService = game:GetService("RunService")
 --<< Types >>--
 
 type Dictionary<I, V> = { [I]: V }
-
 type Callback = (...any) -> ...any
 type Listener = (Player?, boolean, ...any) -> ()
 
@@ -203,9 +200,6 @@ if isRunning then
 			listener(nil, didInvokeCallback, ...)
 		end
 
-		received = script:WaitForChild("Received") :: RemoteEvent
-		received.OnClientEvent:Connect(onRecieveEvent)
-
 		-- Handle requests sent by the server.
 		local function onSentEvent(id: string, uuid: string, ...: any): ()
 			local callback = callbackById[id]
@@ -216,7 +210,10 @@ if isRunning then
 			end
 		end
 
+		received = script:WaitForChild("Received") :: RemoteEvent
 		sent = script:WaitForChild("Sent") :: RemoteEvent
+
+		received.OnClientEvent:Connect(onRecieveEvent)
 		sent.OnClientEvent:Connect(onSentEvent)
 	end
 end

@@ -1,4 +1,4 @@
-gitRepoUrl = "https://github.com/EmproraSuperbithious/Postie"
+gitRepoUrl = "https://github.com/Superbithious/Postie"
 gitSourceBranch = "main"
 
 changelog = true
@@ -6,3 +6,11 @@ changelog = true
 [home]
 enabled = true
 includeReadme = false
+
+[docusaurus]
+tagline = "A safe alternative to RemoteFunctions"
+
+[[navbar.items]]
+href = "https://wally.run/package/superbithious/postie"
+label = "Wally"
+position = "right"
